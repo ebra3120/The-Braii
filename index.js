@@ -3,10 +3,10 @@ const Page = require("./_layout/Default");
 
 module.exports = class extends Page {
     constructor(){
-        super({title:"Home", sName:"Richard Hildred"});
+        super({title:"Home", sName:"Saahil Ebrahim"});
     }
     render(sPage) {
-        const oJson = fetch("https://prog8110winter2021section2-default-rtdb.firebaseio.com/meals.json").json();
+        const oJson = fetch("https://ux308-de416-default-rtdb.firebaseio.com/meals.json").json();
         console.log(oJson);
         let sResult = "<h1>Upcoming Popup Meals</h1>";
         Object.keys(oJson).map((key) => {
@@ -16,8 +16,10 @@ module.exports = class extends Page {
             sResult += `
             <h2>${oEntity.title}</h2>
             <p><img src="${oEntity.featured_image}" alt="${oEntity.title}"</p>
+            <p>"${oEntity.meal_date}"</p>
+            <p>"${oEntity.meal_location}"</p>
             <p>${oEntity.full_description}</p>
-            <form action="https://serene-taiga-04277.herokuapp.com/payment" method="post">
+            <form action="https://ebrahim-assignment3.herokuapp.com/payment" method="post">
             <input type="hidden" name="title" value="${oEntity.title}" />
             <input type="hidden" name="price" value="21" />
             <input type="tel" placeholder="enter your number" name="telephone"/>
