@@ -19,7 +19,7 @@ module.exports = class extends Page {
             <p>"${oEntity.meal_date}"</p>
             <p>"${oEntity.meal_location}"</p>
             <p>${oEntity.full_description}</p>
-            <form action="https://payment-ebra.herokuapp.com/payment/z0fPNONRyq" method="post">
+            <form action="https://payment-ebra.herokuapp.com/payment" method="post">
             <input type="hidden" name="title" value="${oEntity.title}" />
             <input type="hidden" name="price" value="21" />
             <input type="tel" placeholder="enter your number" name="telephone"/>
